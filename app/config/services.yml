@@ -1,0 +1,11 @@
+parameters:
+    #parameter_name: value
+    fullcalendar.event.class: AppBundle\Entity\Event
+    fullcalendar.loader.event: calendar.load_events
+
+services:
+    app.calenda_listener:
+        class: AppBundle\Event\CalendarEventListener
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: 'kernel.event_listener', event: 'calendar.load_events', method: 'loadEvents' }
