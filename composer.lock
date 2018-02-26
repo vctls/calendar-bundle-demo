@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vctls/calendar-bundle.git",
-                "reference": "00240806353a9b39cf9a94f605ab5c67d3361a85"
+                "reference": "f9ce0825dcf1c4f64d2056ed4bbe209fc68cd39b"
             },
             "require": {
                 "doctrine/collections": ">=1.0",
@@ -50,7 +50,7 @@
                 "fullcalendar",
                 "jquery calendar"
             ],
-            "time": "2018-02-26T13:35:02+00:00"
+            "time": "2018-02-26T21:17:05+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2559,7 +2559,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vctls/entity-bundle.git",
-                "reference": "b341ab477dfa1e4254df1f60f7bbbb59fba1d0d8"
+                "reference": "66e131bcaa055bbe37312597d797fa3730fe98cb"
             },
             "require": {
                 "knplabs/knp-menu-bundle": "~2.0",
@@ -2590,7 +2590,7 @@
             ],
             "description": "Generic entity management bundle",
             "homepage": "https://github.com/vctls/entity-bundle",
-            "time": "2018-02-23T11:36:27+00:00"
+            "time": "2018-02-26T21:14:36+00:00"
         }
     ],
     "aliases": [],
