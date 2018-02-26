@@ -1,6 +1,9 @@
 {
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "datatables.net-dt": "^1.10.16",
+    "datatables.net-responsive-dt": "^2.2.1",
     "fullcalendar": "^3.8.2",
     "jqueryui": "^1.11.1"
   }
