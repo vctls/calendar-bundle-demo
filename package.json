@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "fullcalendar": "^3.8.2",
+    "jqueryui": "^1.11.1"
+  }
+}

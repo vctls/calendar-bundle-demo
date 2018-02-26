@@ -16,6 +16,10 @@
         {
             "type": "git",
             "url": "https://github.com/vctls/entity-bundle.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/vctls/calendar-bundle.git"
         }
     ],
     "require": {
@@ -30,7 +34,8 @@
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "~2.3,>=2.3.10",
         "symfony/symfony": "2.8.*",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "adesigns/calendar-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
