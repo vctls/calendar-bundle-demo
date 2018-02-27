@@ -47,7 +47,7 @@ class CustomEvent implements EditableInterface
 
     /**
      * @var boolean
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true, options={"default" : false})
      */
     private $allDay = false;
 
@@ -63,7 +63,7 @@ class CustomEvent implements EditableInterface
      * @param string $title
      * @return CustomEvent
      */
-    public function setTitle($title)
+    public function setTitle(string $title)
     {
         $this->title = $title;
         return $this;
@@ -112,7 +112,7 @@ class CustomEvent implements EditableInterface
     /**
      * @return boolean
      */
-    public function isAllDay()
+    public function isAllDay(): bool
     {
         return $this->allDay;
     }
@@ -120,7 +120,7 @@ class CustomEvent implements EditableInterface
     /**
      * @param $allDay
      */
-    public function setAllDay($allDay)
+    public function setAllDay(bool $allDay)
     {
         $this->allDay = $allDay;
     }
@@ -130,7 +130,7 @@ class CustomEvent implements EditableInterface
      *
      * @return boolean
      */
-    public function getAllDay()
+    public function getAllDay(): bool
     {
         return $this->allDay;
     }
