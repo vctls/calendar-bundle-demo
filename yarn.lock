@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-bootstrap@^4.0.0:
+bootstrap@~4.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0.tgz#ceb03842c145fcc1b9b4e15da2a05656ba68469a"
 
-datatables.net-dt@^1.10.15, datatables.net-dt@^1.10.16:
+datatables.net-dt@^1.10.15, datatables.net-dt@~1.10:
   version "1.10.16"
   resolved "https://registry.yarnpkg.com/datatables.net-dt/-/datatables.net-dt-1.10.16.tgz#6758a308fb9e5f9629fb6541cc301e48ec9ec555"
   dependencies:
     datatables.net "1.10.16"
     jquery ">=1.7"
 
-datatables.net-responsive-dt@^2.2.1:
+datatables.net-responsive-dt@~2.2:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/datatables.net-responsive-dt/-/datatables.net-responsive-dt-2.2.1.tgz#a4ca9c832036cdf0b3fb4d484c44c2d7b66ba490"
   dependencies:
@@ -34,21 +34,21 @@ datatables.net@1.10.16, datatables.net@^1.10.15:
   dependencies:
     jquery ">=1.7"
 
-fullcalendar@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.8.2.tgz#ef7dc77b89134bbe6163e51136f7a1f8bfc1d807"
+fullcalendar@~3.9:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-3.9.0.tgz#b608a9989f3416f0b1d526c6bdfeeaf2ac79eda5"
   dependencies:
     jquery "2 - 3"
-    moment "^2.9.0"
+    moment "^2.20.1"
+
+jquery-ui@~1.12:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
 
 "jquery@2 - 3", jquery@>=1.7:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
-jqueryui@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/jqueryui/-/jqueryui-1.11.1.tgz#8718550705f5568d1199196169094db73b2291bc"
-
-moment@^2.9.0:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+moment@^2.20.1:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"

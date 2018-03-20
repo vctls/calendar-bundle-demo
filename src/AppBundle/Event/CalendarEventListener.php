@@ -10,16 +10,16 @@ namespace AppBundle\Event;
 
 use ADesigns\CalendarBundle\Event\CalendarEvent;
 use AppBundle\Entity\CustomEvent;
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 
 class CalendarEventListener
 {
     /**
-     * @var EntityManagerInterface
+     * @var EntityManager
      */
     private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(EntityManager $entityManager)
     {
         $this->entityManager = $entityManager;
     }

@@ -87,10 +87,12 @@ class CustomEvent implements EditableInterface
 
     /**
      * @param \DateTime $startDateTime
+     * @return CustomEvent
      */
     public function setStartDateTime(\DateTime $startDateTime)
     {
         $this->startDateTime = $startDateTime;
+        return $this;
     }
 
     /**
@@ -103,10 +105,12 @@ class CustomEvent implements EditableInterface
 
     /**
      * @param \DateTime $endDateTime
+     * @return CustomEvent
      */
     public function setEndDateTime(\DateTime $endDateTime)
     {
         $this->endDateTime = $endDateTime;
+        return $this;
     }
 
     /**
@@ -119,10 +123,12 @@ class CustomEvent implements EditableInterface
 
     /**
      * @param $allDay
+     * @return CustomEvent
      */
     public function setAllDay(bool $allDay)
     {
         $this->allDay = $allDay;
+        return $this;
     }
 
     /**
