@@ -15,3 +15,4 @@
 /app/SymfonyRequirements.php
 /app/check.php
 /docker/docker-compose.yml
+web/js/fos_js_routes.js
