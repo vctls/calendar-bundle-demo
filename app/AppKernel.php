@@ -40,4 +40,41 @@ class AppKernel extends Kernel
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+    /**
+     * @return string
+     */
+    public function getCacheDir()
+    {
+        // Si un fichier 'env.php' existe, essayer de l'inclure
+        // et récupérer le répertoire de cache.
+        // Cette opération doit être faite depuis la classe Kernel
+        // et pas depuis le point d'entrée app_dev.php, parce que
+        // les opérations en ligne de commande n'en tiennent pas compte.
+        $envFile = __DIR__.'/config/env.php';
+        if (file_exists($envFile)) {
+            include $envFile;
+            if (isset($cacheDir)) {
+                return $cacheDir .  $this->environment;
+            }
+        }
+
+        return parent::getCacheDir();
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogDir()
+    {
+        $envFile = __DIR__.'/config/env.php';
+        if (file_exists($envFile)) {
+            include $envFile;
+            if (isset($logDir)) {
+                return $logDir .  $this->environment;
+            }
+        }
+
+        return parent::getLogDir();
+    }
 }

@@ -3,6 +3,7 @@
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
+/app/config/env.php
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
@@ -13,3 +14,4 @@
 /composer.phar
 /app/SymfonyRequirements.php
 /app/check.php
+/docker/docker-compose.yml

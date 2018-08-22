@@ -1,0 +1,75 @@
+version: '3.6'
+
+services:
+
+  db:
+    container_name: caldemo_db
+    image: mariadb:10.1
+    ports:
+    - "3306:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=caldemo
+    volumes:
+    - dbsock:/var/run/mysqld/
+
+  php:
+    container_name: caldemo_php
+    build:
+      context: ./php
+    volumes:
+    - caldemo:/var/www/html/caldemo
+    - phpsock:/var/run/php
+    - dbsock:/var/run/mysqld/
+    - ./php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    depends_on:
+    - db
+
+  nginx:
+    container_name: caldemo_nginx
+    image: nginx:latest
+    ports:
+    - "80:80"
+    volumes:
+    - caldemo:/var/www/html/caldemo
+    - phpsock:/var/run/php
+    - ./nginx/caldemo.conf:/etc/nginx/conf.d/caldemo.conf
+    depends_on:
+    - php
+
+  composer:
+    container_name: caldemo_composer
+    image: composer:latest
+    command: install
+    volumes:
+    - caldemo:/app
+
+#  phantomjs:
+#    container_name: caldemo_phantomjs
+#    image: davert/phantomjs-env
+#    ports:
+#    - "4444:4444"
+#    environment:
+#    - APP_ANY_PROTOCOL=true
+
+# Run tests on this container.
+#  codecept:
+#    container_name: caldemo_codecept
+#    build:
+#      context: ./codecept
+#    depends_on:
+#    - phantomjs
+#    - nginx
+#    volumes:
+#    - caldemo:/project
+
+volumes:
+  phpsock: ~
+  dbsock: ~
+  # Mount the project directory as an NFS share named 'caldemo' for this to work.
+  caldemo:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=10.0.75.1,rw,vers=3,udp,nolock
+      device: ':/caldemo'
