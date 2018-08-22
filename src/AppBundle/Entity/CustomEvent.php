@@ -23,13 +23,13 @@ class CustomEvent implements EditableInterface
      * @var \DateTime
      * @ORM\Column(type="datetime")
      */
-    private $startDateTime;
+    private $startDatetime;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime")
      */
-    private $endDateTime;
+    private $endDatetime;
 
     /**
      * @var string
@@ -80,36 +80,36 @@ class CustomEvent implements EditableInterface
     /**
      * @return \DateTime
      */
-    public function getStartDateTime()
+    public function getStartDatetime()
     {
-        return $this->startDateTime;
+        return $this->startDatetime;
     }
 
     /**
-     * @param \DateTime $startDateTime
+     * @param \DateTime $startDatetime
      * @return CustomEvent
      */
-    public function setStartDateTime(\DateTime $startDateTime)
+    public function setStartDatetime(\DateTime $startDatetime)
     {
-        $this->startDateTime = $startDateTime;
+        $this->startDatetime = $startDatetime;
         return $this;
     }
 
     /**
      * @return \DateTime
      */
-    public function getEndDateTime()
+    public function getEndDatetime()
     {
-        return $this->endDateTime;
+        return $this->endDatetime;
     }
 
     /**
-     * @param \DateTime $endDateTime
+     * @param \DateTime $endDatetime
      * @return CustomEvent
      */
-    public function setEndDateTime(\DateTime $endDateTime)
+    public function setEndDatetime(\DateTime $endDatetime)
     {
-        $this->endDateTime = $endDateTime;
+        $this->endDatetime = $endDatetime;
         return $this;
     }
 

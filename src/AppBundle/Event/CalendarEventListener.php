@@ -8,6 +8,7 @@
 namespace AppBundle\Event;
 
 
+use ADesigns\CalendarBundle\Entity\FullCalendarEvent;
 use ADesigns\CalendarBundle\Event\CalendarEvent;
 use AppBundle\Entity\CustomEvent;
 use Doctrine\ORM\EntityManager;
@@ -29,30 +30,17 @@ class CalendarEventListener
         $startDate = $calendarEvent->getStartDatetime();
         $endDate = $calendarEvent->getEndDatetime();
 
-        // The original request so you can get filters from the calendar
-        // Use the filter in your query for example
-
         $request = $calendarEvent->getRequest();
         $filter = $request->get('filter');
 
-
-        // load events using your custom logic here,
-        // for instance, retrieving events from a repository
-
-        $customEvents = $this->entityManager->getRepository(CustomEvent::class)
+        // TODO Allow fetching any compatible events. Using tagged services, maybe?
+        $customEvents = $this->entityManager->getRepository(FullCalendarEvent::class)
             ->createQueryBuilder('e')
-            ->where('e.startDateTime BETWEEN :startDate and :endDate')
-            ->where('e.endDateTime BETWEEN :startDate and :endDate')
+            ->where('e.startDatetime BETWEEN :startDate and :endDate')
+            ->where('e.endDatetime BETWEEN :startDate and :endDate')
             ->setParameter('startDate', $startDate->format('Y-m-d H:i:s'))
             ->setParameter('endDate', $endDate->format('Y-m-d H:i:s'))
             ->getQuery()->getResult();
-
-        // $companyEvents and $companyEvent in this example
-        // represent entities from your database, NOT instances of EventEntity
-        // within this bundle.
-        //
-        // Create EventEntity instances and populate it's properties with data
-        // from your own entities/database values.
 
         $calendarEvent->setEvents($customEvents);
     }
