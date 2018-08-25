@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3669bcfcb9ae3e5c58ddfeaf84d3fbbe",
+    "content-hash": "cd904786ed5128a4589acc646e5b12f1",
     "packages": [
         {
             "name": "adesigns/calendar-bundle",
@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vctls/calendar-bundle.git",
-                "reference": "81edeefcd2e5dec791788a9db81138b2f08cfa56"
+                "reference": "3a92df11595268c3b13f7d466084aa306a498c5f"
             },
             "require": {
                 "doctrine/collections": ">=1.0",
@@ -50,7 +50,7 @@
                 "fullcalendar",
                 "jquery calendar"
             ],
-            "time": "2018-08-22T08:34:16+00:00"
+            "time": "2018-08-22T14:22:01+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2660,7 +2660,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
